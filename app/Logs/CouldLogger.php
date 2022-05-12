@@ -1,10 +1,13 @@
 <?php
 namespace App\Logs;
 
-class CouldLogger
+use App\Contracts\LogInterface;
+
+class CouldLogger implements LogInterface
 {
     public function log($content)
     {
-        //log to file
+        //输出 Log 日志到云。
+        dd($content. ' Could');
     }
 }

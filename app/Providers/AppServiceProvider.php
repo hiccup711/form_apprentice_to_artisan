@@ -13,7 +13,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $default = config('log.default');
+        $logger = config("log.{$default}.class");
+
+        $this->app->bind(
+            \App\Contracts\LogInterface::class,
+            $logger
+        );
     }
 
     /**

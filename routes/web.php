@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 Route::group(['namespace' => "App\Http\Controllers\\"], function(){
     Route::get('/users', 'UserController@getIndex');
+    Route::get('/log', 'LogController@log');
 });
